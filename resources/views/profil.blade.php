@@ -18,6 +18,7 @@
     <a href="/" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-700">Home</a>
     <a href="/katalog" class="bg-green-500 px-4 py-2 rounded hover:bg-green-700">Katalog</a>
     <a href="/bantuan" class="bg-purple-500 px-4 py-2 rounded hover:bg-purple-700">Bantuan</a>
+    <a href="/kontak" class="bg-red-500 px-4 py-2 rounded hover:bg-red-700">Kontak</a>
 </div>
 
 </body>
