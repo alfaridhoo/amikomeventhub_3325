@@ -7,7 +7,7 @@ Route::get('/', function () {
 });
 
 Route::get('/kontak', function () {
-    return view('kontak');
+    return view('contact');
 });
 
 Route::get('/profil', function () {
