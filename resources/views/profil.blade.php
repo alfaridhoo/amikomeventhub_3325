@@ -21,12 +21,12 @@
 
         <img src="https://via.placeholder.com/120" class="mx-auto rounded-full border-4 border-indigo-500 mb-4">
 
-        <h1 class="text-2xl font-bold">[Nama Kamu]</h1>
+        <h1 class="text-2xl font-bold">Muhammad Alfaridho P.W</h1>
         <p class="text-gray-400 mb-4">Mahasiswa Amikom</p>
 
         <div class="text-left space-y-2">
-            <p><span class="font-semibold">NIM:</span> [NIM]</p>
-            <p><span class="font-semibold">Kelas:</span> [Kelas]</p>
+            <p><span class="font-semibold">NIM:</span> 24.12.3325</p>
+            <p><span class="font-semibold">Kelas:</span> SI 04</p>
         </div>
 
         <div class="flex justify-center gap-2 mt-5">
