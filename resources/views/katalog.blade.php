@@ -24,6 +24,7 @@
     <a href="/" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-700">Home</a>
     <a href="/profil" class="bg-yellow-500 px-4 py-2 rounded hover:bg-yellow-700">Profil</a>
     <a href="/bantuan" class="bg-purple-500 px-4 py-2 rounded hover:bg-purple-700">Bantuan</a>
+    <a href="/kontak" class="bg-red-500 px-4 py-2 rounded hover:bg-red-700">Kontak</a>
 </div>
 
 </body>
