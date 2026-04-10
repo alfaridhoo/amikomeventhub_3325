@@ -8,18 +8,21 @@
 
 <!-- Navbar -->
 <div class="flex flex-wrap justify-center gap-3 p-4 bg-gray-900 border-b border-gray-800">
-    <a href="/" class="hover:text-indigo-400">Home</a>
+    <a href="/" class="hover:text-indigo-400 transition">Home</a>
     <a href="/profil" class="text-indigo-400 font-semibold">Profil</a>
-    <a href="/katalog" class="hover:text-indigo-400">Katalog</a>
-    <a href="/bantuan" class="hover:text-indigo-400">Bantuan</a>
-    <a href="/kontak" class="bg-indigo-600 px-3 py-1 rounded hover:bg-indigo-700">Kontak</a>
+    <a href="/katalog" class="hover:text-indigo-400 transition">Katalog</a>
+    <a href="/bantuan" class="hover:text-indigo-400 transition">Bantuan</a>
+    <a href="/kontak" class="hover:text-indigo-400 transition">Kontak</a>
 </div>
 
 <!-- Content -->
-<div class="flex items-center justify-center mt-10 px-4">
-    <div class="bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-xl w-full max-w-md text-center">
+<div class="flex justify-center items-center px-4 py-10">
 
-        <img src="https://via.placeholder.com/120" class="mx-auto rounded-full border-4 border-indigo-500 mb-4">
+    <div class="bg-gray-900 border border-gray-800 p-8 rounded-2xl shadow-xl w-full max-w-md text-center
+                hover:shadow-indigo-500/20 transition duration-500">
+
+        <img src="https://via.placeholder.com/120" 
+             class="mx-auto rounded-full border-4 border-indigo-500 mb-4">
 
         <h1 class="text-2xl font-bold">Muhammad Alfaridho P.W</h1>
         <p class="text-gray-400 mb-4">Mahasiswa Amikom</p>
@@ -35,6 +38,7 @@
         </div>
 
     </div>
+
 </div>
 
 </body>
