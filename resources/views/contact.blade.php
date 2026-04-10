@@ -20,14 +20,14 @@
     
     <div class="bg-gray-900 border border-gray-800 p-8 rounded-xl shadow-xl w-full max-w-md text-center">
 
-        <h1 class="text-2xl font-bold mb-2">Hubungi Kami 📩</h1>
+        <h1 class="text-2xl font-bold mb-2">Hubungi Kami </h1>
         <p class="text-gray-400 mb-6">Silakan hubungi kami melalui kontak berikut</p>
 
         <!-- Info -->
         <div class="space-y-3 text-left">
-            <p><span class="font-semibold">📧 Email:</span> admin@amikomeventhub.com</p>
-            <p><span class="font-semibold">📱 WhatsApp:</span> 0812-3456-7890</p>
-            <p><span class="font-semibold">📍 Alamat:</span> Universitas Amikom</p>
+            <p><span class="font-semibold">Email:</span> admin@amikomeventhub.com</p>
+            <p><span class="font-semibold">WhatsApp:</span> 0812-3456-7890</p>
+            <p><span class="font-semibold">Alamat:</span> Universitas Amikom</p>
         </div>
 
         <!-- Button -->
