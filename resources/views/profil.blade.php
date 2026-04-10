@@ -4,36 +4,38 @@
     <title>Profil</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-white min-h-screen">
+<body class="bg-gradient-to-br from-gray-950 to-gray-900 text-white min-h-screen">
 
 <!-- Navbar -->
-<div class="p-4 bg-slate-800 shadow flex justify-center gap-3">
-    <a href="/" class="bg-blue-500 px-4 py-2 rounded hover:bg-blue-700">Home</a>
-    <a href="/katalog" class="bg-green-500 px-4 py-2 rounded hover:bg-green-700">Katalog</a>
-    <a href="/bantuan" class="bg-purple-500 px-4 py-2 rounded hover:bg-purple-700">Bantuan</a>
-    <a href="/kontak" class="bg-red-500 px-4 py-2 rounded hover:bg-red-700">Kontak</a>
+<div class="flex flex-wrap justify-center gap-3 p-4 bg-gray-900 border-b border-gray-800">
+    <a href="/" class="hover:text-indigo-400">Home</a>
+    <a href="/profil" class="text-indigo-400 font-semibold">Profil</a>
+    <a href="/katalog" class="hover:text-indigo-400">Katalog</a>
+    <a href="/bantuan" class="hover:text-indigo-400">Bantuan</a>
+    <a href="/kontak" class="bg-indigo-600 px-3 py-1 rounded hover:bg-indigo-700">Kontak</a>
 </div>
 
 <!-- Content -->
-<div class="flex justify-center items-center mt-10">
-    <div class="bg-slate-800 p-8 rounded-xl shadow-lg w-full max-w-md text-center">
+<div class="flex items-center justify-center mt-10 px-4">
+    <div class="bg-gray-900 border border-gray-800 rounded-xl p-8 shadow-xl w-full max-w-md text-center">
 
-        <img src="https://via.placeholder.com/100" class="mx-auto rounded-full mb-4 border-4 border-blue-500">
+        <img src="https://via.placeholder.com/120" class="mx-auto rounded-full border-4 border-indigo-500 mb-4">
 
-        <h1 class="text-2xl font-bold mb-2">Profil Praktikan</h1>
+        <h1 class="text-2xl font-bold">[Nama Kamu]</h1>
+        <p class="text-gray-400 mb-4">Mahasiswa Amikom</p>
 
-        <p class="text-slate-300">Nama: [Nama Kamu]</p>
-        <p class="text-slate-300">NIM: [NIM Kamu]</p>
-        <p class="text-slate-300 mb-4">Kelas: [Kelas]</p>
+        <div class="text-left space-y-2">
+            <p><span class="font-semibold">NIM:</span> [NIM]</p>
+            <p><span class="font-semibold">Kelas:</span> [Kelas]</p>
+        </div>
 
-        <div class="flex justify-center gap-3 mt-4">
-            <span class="bg-blue-500 px-3 py-1 rounded text-sm">Laravel</span>
-            <span class="bg-green-500 px-3 py-1 rounded text-sm">Tailwind</span>
-            <span class="bg-purple-500 px-3 py-1 rounded text-sm">Web Dev</span>
+        <div class="flex justify-center gap-2 mt-5">
+            <span class="bg-indigo-600 px-3 py-1 rounded text-sm">Laravel</span>
+            <span class="bg-green-600 px-3 py-1 rounded text-sm">Tailwind</span>
         </div>
 
     </div>
 </div>
 
 </body>
-</html> 
+</html>
