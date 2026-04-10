@@ -8,38 +8,53 @@
 
 <!-- Navbar -->
 <div class="flex flex-wrap justify-center gap-3 p-4 bg-gray-900 border-b border-gray-800">
-    <a href="/" class="hover:text-indigo-400">Home</a>
-    <a href="/profil" class="hover:text-indigo-400">Profil</a>
+    <a href="/" class="hover:text-indigo-400 transition">Home</a>
+    <a href="/profil" class="hover:text-indigo-400 transition">Profil</a>
     <a href="/katalog" class="text-indigo-400 font-semibold">Katalog</a>
-    <a href="/bantuan" class="hover:text-indigo-400">Bantuan</a>
-    <a href="/kontak" class="bg-indigo-600 px-3 py-1 rounded hover:bg-indigo-700">Kontak</a>
+    <a href="/bantuan" class="hover:text-indigo-400 transition">Bantuan</a>
+    <a href="/kontak" class="hover:text-indigo-400 transition">Kontak</a>
 </div>
 
 <!-- Content -->
 <div class="p-8">
-    <h1 class="text-3xl font-bold mb-6 text-center">Event Terbaru</h1>
+
+    <h1 class="text-3xl font-bold mb-6 text-center">Event Terbaru </h1>
 
     <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow hover:scale-105 hover:shadow-2xl transition">
+        <!-- Card -->
+        <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl shadow
+                    hover:scale-105 hover:shadow-indigo-500/20 transition duration-500">
             <h2 class="text-xl font-bold">Seminar AI</h2>
             <p class="text-gray-400 my-2">Belajar AI dari dasar</p>
-            <button class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">Join</button>
+            <button class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700 
+                           hover:shadow-lg hover:shadow-indigo-500/30 transition">
+                Join
+            </button>
         </div>
 
-        <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow hover:scale-105 hover:shadow-2xl transition">
+        <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl shadow
+                    hover:scale-105 hover:shadow-indigo-500/20 transition duration-500">
             <h2 class="text-xl font-bold">Workshop Web</h2>
             <p class="text-gray-400 my-2">Laravel & Tailwind</p>
-            <button class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">Join</button>
+            <button class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700 
+                           hover:shadow-lg hover:shadow-indigo-500/30 transition">
+                Join
+            </button>
         </div>
 
-        <div class="bg-gray-900 border border-gray-800 p-6 rounded-xl shadow hover:scale-105 hover:shadow-2xl transition">
+        <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl shadow
+                    hover:scale-105 hover:shadow-indigo-500/20 transition duration-500">
             <h2 class="text-xl font-bold">Hackathon</h2>
             <p class="text-gray-400 my-2">Kompetisi coding</p>
-            <button class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">Join</button>
+            <button class="bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700 
+                           hover:shadow-lg hover:shadow-indigo-500/30 transition">
+                Join
+            </button>
         </div>
 
     </div>
+
 </div>
 
 </body>
