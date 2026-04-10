@@ -8,11 +8,11 @@
 
 <!-- Navbar -->
 <div class="flex flex-wrap justify-center gap-3 p-4 bg-gray-900 border-b border-gray-800">
-    <a href="/" class="hover:text-indigo-400">Home</a>
-    <a href="/profil" class="hover:text-indigo-400">Profil</a>
-    <a href="/katalog" class="hover:text-indigo-400">Katalog</a>
+    <a href="/" class="hover:text-indigo-400 transition">Home</a>
+    <a href="/profil" class="hover:text-indigo-400 transition">Profil</a>
+    <a href="/katalog" class="hover:text-indigo-400 transition">Katalog</a>
     <a href="/bantuan" class="text-indigo-400 font-semibold">Bantuan</a>
-    <a href="/kontak" class="bg-indigo-600 px-3 py-1 rounded hover:bg-indigo-700">Kontak</a>
+    <a href="/kontak" class="hover:text-indigo-400 transition">Kontak</a>
 </div>
 
 <!-- Content -->
@@ -22,17 +22,20 @@
 
     <div class="space-y-4">
 
-        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl hover:shadow-xl transition">
+        <div class="bg-gray-900 border border-gray-800 p-5 rounded-2xl
+                    hover:shadow-indigo-500/20 transition duration-500">
             <p class="font-semibold">Apa itu AmikomEventHub?</p>
             <p class="text-gray-400">Platform event mahasiswa modern.</p>
         </div>
 
-        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl hover:shadow-xl transition">
+        <div class="bg-gray-900 border border-gray-800 p-5 rounded-2xl
+                    hover:shadow-indigo-500/20 transition duration-500">
             <p class="font-semibold">Bagaimana cara daftar?</p>
-            <p class="text-gray-400">Klik tombol Join di halaman katalog.</p>
+            <p class="text-gray-400">Klik tombol Join di katalog event.</p>
         </div>
 
-        <div class="bg-gray-900 border border-gray-800 p-5 rounded-xl hover:shadow-xl transition">
+        <div class="bg-gray-900 border border-gray-800 p-5 rounded-2xl
+                    hover:shadow-indigo-500/20 transition duration-500">
             <p class="font-semibold">Apakah gratis?</p>
             <p class="text-gray-400">Sebagian gratis, sebagian berbayar.</p>
         </div>
