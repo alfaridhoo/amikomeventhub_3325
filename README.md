@@ -6,3 +6,5 @@ https://amikomeventhub-3325-main-8d8zyf.free.laravel.cloud/
 
 https://amikomeventhub-3325-main-8d8zyf.free.laravel.cloud/kontak
 
+https://amikomeventhub-3325-main-8d8zyf.free.laravel.cloud/admin
+
