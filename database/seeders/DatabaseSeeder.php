@@ -100,8 +100,7 @@ class DatabaseSeeder extends Seeder
     'stock' => 50,
     'poster_path' => 'posters/event-6.png',
 ]);
-
-// 7 (bonus biar lebih keren)
+// 7
 \App\Models\Event::create([
     'category_id' => $category2->id,
     'title' => 'E-Sport U-Champ',
