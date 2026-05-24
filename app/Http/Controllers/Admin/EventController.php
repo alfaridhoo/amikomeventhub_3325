@@ -45,7 +45,7 @@ class EventController extends Controller
             $data['poster_path'] = $request->file('poster')->store('posters', 'public');
         }
 
-
+        $data['user_id'] = 1;
         Event::create($data);
         return redirect()->route('admin.events.index')->with('success', 'Event berhasil dibuat.');
     }

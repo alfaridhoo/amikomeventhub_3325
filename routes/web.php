@@ -7,6 +7,8 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
 use App\Http\Controllers\Admin\EventController as EventAdminController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PartnerController;
 
 
 
@@ -42,3 +44,9 @@ Route::get('/katalog', function () { return view('katalog'); });
 Route::get('/bantuan', function () { return view('bantuan'); });
 // Route::prefix('admin')->name('admin.')->group(function () {
 // });
+
+Route::resource('/admin/categories', CategoryController::class)
+    ->names('admin.categories');
+
+Route::resource('/admin/partners', PartnerController::class)
+    ->names('admin.partners');
