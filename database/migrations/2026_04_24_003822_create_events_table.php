@@ -13,7 +13,7 @@ return new class extends Migration
     {
        Schema::create('events', function (Blueprint $table) {
     $table->id();
-    $table->foreignId('category_id')->constrained()->cascadeOnDelete();
+   $table->unsignedBigInteger('category_id');
     $table->string('title');
     $table->text('description')->nullable();
     $table->dateTime('date');
@@ -22,6 +22,7 @@ return new class extends Migration
     $table->integer('stock');
     $table->string('poster_path')->nullable();
     $table->timestamps();
+$table->unsignedBigInteger('user_id')->nullable();    // butuh tabel users
 });
     }
 

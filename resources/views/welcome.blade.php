@@ -152,6 +152,67 @@
             </div>
         </div>
     </section>
+            </section>
 
+    <!-- Category Section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold mb-4">
+                Kategori Event
+            </h2>
 
-    @endsection
+            <p class="text-slate-500">
+                Berbagai kategori event tersedia di AmikomEventHub.
+            </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            @foreach($categories as $category)
+
+            <div
+                class="px-6 py-3 bg-indigo-100 text-indigo-700 rounded-full font-semibold hover:bg-indigo-600 hover:text-white transition">
+
+                {{ $category->name }}
+
+            </div>
+
+            @endforeach
+        </div>
+    </section>
+
+    <!-- Partner Section -->
+    <section class="max-w-7xl mx-auto px-6 pb-20">
+
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-extrabold mb-4">
+                Partner Kami
+            </h2>
+
+            <p class="text-slate-500">
+                Didukung oleh berbagai partner terbaik untuk mendukung event Anda.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+            @foreach($partners as $partner)
+
+            <div
+                class="bg-white rounded-2xl shadow p-6 flex flex-col items-center hover:shadow-xl transition">
+
+                <img src="{{ asset('storage/' . $partner->logo) }}"
+                    alt="{{ $partner->name }}"
+                    class="w-24 h-24 object-contain mb-4">
+
+                <h3 class="font-bold text-lg text-center">
+                    {{ $partner->name }}
+                </h3>
+
+            </div>
+
+            @endforeach
+
+        </div>
+    </section>
+
+@endsection
