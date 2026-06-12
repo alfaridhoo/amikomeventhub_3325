@@ -9,12 +9,14 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // 1. Akun Admin Utama
-        \App\Models\User::create([
-            'name' => 'Admin Amikom',
-            'email' => 'admin@amikom.ac.id',
-            'password' => bcrypt('password'),
-            'role' => 'admin',
-        ]);
+        \App\Models\User::firstOrCreate(
+            ['email' => 'admin@amikom.ac.id'],
+            [
+                'name' => 'Admin Amikom',
+                'password' => bcrypt('password'),
+                'role' => 'admin',
+            ]
+        );
 
         // 2. Insert Kategori Event
         $category = \App\Models\Category::create([
