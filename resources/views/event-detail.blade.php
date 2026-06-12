@@ -4,7 +4,7 @@
         <!-- Left: Poster -->
         <div class="lg:col-span-1">
             <div class="sticky top-32">
-                <img src="{{ asset('assets/concert.png') }}" alt="Concert Poster"
+                <img src="{{ asset($event->poster_path ? 'storage/' . $event->poster_path : 'assets/concert.png') }}" alt="{{ $event->title }} Poster"
                     class="w-full rounded-[2.5rem] shadow-2xl border-8 border-white">
                 <div class="mt-8 p-6 bg-white rounded-3xl border border-slate-100 shadow-sm">
                     <h4 class="font-bold mb-4">Penyelenggara</h4>
@@ -25,10 +25,8 @@
         <div class="lg:col-span-2 space-y-12">
             <div class="space-y-4">
                 <span
-                    class="px-4 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-sm font-bold uppercase tracking-wider">Music
-                    Festival</span>
-                <h1 class="text-4xl md:text-5xl font-black leading-tight">Jazz Night 2024: A Celebration of Rhythm &
-                    Melody</h1>
+                    class="px-4 py-1.5 bg-indigo-100 text-indigo-700 rounded-full text-sm font-bold uppercase tracking-wider">{{ $event->category->name ?? 'Event' }}</span>
+                <h1 class="text-4xl md:text-5xl font-black leading-tight">{{ $event->title }}</h1>
                 <div class="flex flex-wrap gap-6 text-slate-500 font-medium">
                     <div class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,7 +34,7 @@
                                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
                             </path>
                         </svg>
-                        <span>Saturday, 16 Nov 2024</span>
+                        <span>{{ \Carbon\Carbon::parse($event->date)->format('l, d F Y') }}</span>
                     </div>
                     <div class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,7 +44,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
-                        <span>The Blue Note Lounge, Metropolis</span>
+                        <span>{{ $event->location }}</span>
                     </div>
                 </div>
             </div>
@@ -69,14 +67,14 @@
                 <div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
                     <div>
                         <p class="text-indigo-200 font-bold uppercase tracking-widest text-sm mb-2">Harga Tiket</p>
-                        <h2 class="text-5xl font-black">Rp 150.000 <span class="text-lg font-medium text-indigo-200">/
+                        <h2 class="text-5xl font-black">Rp {{ number_format($event->price, 0, ',', '.') }} <span class="text-lg font-medium text-indigo-200">/
                                 orang</span></h2>
                         <p class="mt-4 text-indigo-100 flex items-center gap-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
-                            Sisa stok: <span class="font-bold underline">42 Tiket lagi!</span>
+                            Sisa stok: <span class="font-bold underline">{{ $event->stock }} Tiket lagi!</span>
                         </p>
                     </div>
                     <div>

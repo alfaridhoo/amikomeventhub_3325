@@ -2,11 +2,11 @@
 @section('content')
  <main class="max-w-3xl mx-auto px-6 py-20">
         <div class="mb-12">
-            <a href="{{ route('events.show') }}" class="text-indigo-600 font-bold flex items-center gap-2 mb-6">
+            <a href="{{ route('home') }}" class="text-indigo-600 font-bold flex items-center gap-2 mb-6">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
-                Kembali ke Event
+                Kembali ke Beranda
             </a>
             <h1 class="text-4xl font-extrabold">Checkout</h1>
             <p class="text-slate-500 mt-2">Lengkapi data Anda untuk mendapatkan tiket.</p>
