@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\PartnerController;
 
 
 
+
 // Halaman Home (Menggantikan rute welcome bawaan Laravel)
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
