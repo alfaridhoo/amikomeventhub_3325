@@ -31,8 +31,15 @@
             @foreach($partners as $partner)
             <tr class="border-t">
                 <td class="p-4">
-                   <img src="{{ asset('storage/' . $partner->logo) }}"
-                    class="w-20 h-20 object-contain">
+                   @if($partner->logo_url)
+                    <img src="{{ $partner->logo_url }}"
+                        alt="{{ $partner->name }}"
+                        class="w-20 h-20 object-contain">
+                   @else
+                    <div class="w-20 h-20 bg-slate-200 flex items-center justify-center text-xs text-slate-500 rounded">
+                        Tidak ada logo
+                    </div>
+                   @endif
                 </td>
 
                 <td class="p-4">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Partner;
 
 class PartnerController extends Controller
@@ -26,15 +27,33 @@ class PartnerController extends Controller
 
    public function store(Request $request)
 {   
-    $request->validate([
+    $data = $request->validate([
         'name' => 'required',
-        'logo' => 'required|image|mimes:jpg,jpeg,png,svg|max:2048'
+        'logo' => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+        'logo_url' => [
+            'nullable',
+            function ($attribute, $value, $fail) {
+                if (! preg_match('/^(https?:\/\/|data:image\/[a-zA-Z]+;base64,)/', $value)) {
+                    $fail('Logo URL harus berupa link gambar langsung dengan http/https atau data URI gambar.');
+                }
+            },
+        ],
     ]);
 
-    $logo = $request->file('logo')->store('partners', 'public');
+    if (! $request->hasFile('logo') && ! $request->logo_url) {
+        return back()
+            ->withErrors(['logo' => 'Logo partner harus berupa file gambar atau URL gambar.'])
+            ->withInput();
+    }
+
+    if ($request->hasFile('logo')) {
+        $logo = $request->file('logo')->store('partners', 'public');
+    } else {
+        $logo = $request->logo_url;
+    }
 
     Partner::create([
-        'name' => $request->name,
+        'name' => $data['name'],
         'logo' => $logo
     ]);
 
@@ -49,13 +68,33 @@ class PartnerController extends Controller
 
    public function update(Request $request, Partner $partner)
 {
-    $data = [
-        'name' => $request->name
-    ];
+    $data = $request->validate([
+        'name' => 'required',
+        'logo' => 'nullable|image|mimes:jpg,jpeg,png,svg|max:2048',
+        'logo_url' => [
+            'nullable',
+            function ($attribute, $value, $fail) {
+                if (! preg_match('/^(https?:\/\/|data:image\/[a-zA-Z]+;base64,)/', $value)) {
+                    $fail('Logo URL harus berupa link gambar langsung dengan http/https atau data URI gambar.');
+                }
+            },
+        ],
+    ]);
 
     if ($request->hasFile('logo')) {
-        $data['logo'] = $request->file('logo')
-            ->store('partners', 'public');
+        $oldLogo = $partner->getAttribute('logo');
+        if ($oldLogo && ! preg_match('/^https?:\/\//', $oldLogo)) {
+            Storage::disk('public')->delete($oldLogo);
+        }
+
+        $data['logo'] = $request->file('logo')->store('partners', 'public');
+    } elseif ($request->logo_url) {
+        $oldLogo = $partner->getAttribute('logo');
+        if ($oldLogo && ! preg_match('/^https?:\/\//', $oldLogo)) {
+            Storage::disk('public')->delete($oldLogo);
+        }
+
+        $data['logo'] = $request->logo_url;
     }
 
     $partner->update($data);

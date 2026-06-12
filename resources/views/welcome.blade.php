@@ -146,9 +146,15 @@
             <div
                 class="bg-white rounded-2xl shadow p-6 flex flex-col items-center hover:shadow-xl transition">
 
-                <img src="{{ asset('storage/' . $partner->logo) }}"
+                @if($partner->logo_url)
+                <img src="{{ $partner->logo_url }}"
                     alt="{{ $partner->name }}"
                     class="w-24 h-24 object-contain mb-4">
+                @else
+                <div class="w-24 h-24 bg-slate-200 flex items-center justify-center text-xs text-slate-500 rounded mb-4">
+                    Logo
+                </div>
+                @endif
 
                 <h3 class="font-bold text-lg text-center">
                     {{ $partner->name }}

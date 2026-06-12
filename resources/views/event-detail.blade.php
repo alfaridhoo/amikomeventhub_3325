@@ -52,13 +52,7 @@
             <div class="prose prose-slate max-w-none">
                 <h3 class="text-2xl font-bold mb-4">Deskripsi Event</h3>
                 <p class="text-lg text-slate-600 leading-relaxed">
-                    Nikmati malam yang tak terlupakan dengan alunan jazz dari musisi internasional. Jazz Night 2024
-                    hadir untuk membawa Anda ke dalam perjalanan melodi yang menenangkan dan ritme yang menggugah jiwa.
-                </p>
-                <p class="text-lg text-slate-600 leading-relaxed mt-4">
-                    Tahun ini kami menghadirkan <strong>The Jazz Collective</strong>, <strong>Luna Vance</strong>, dan
-                    artis favorit lainnya. Acara ini juga dilengkapi dengan food stall premium dan area networking yang
-                    nyaman.
+                    {!! nl2br(e($event->description)) !!}
                 </p>
             </div>
 
@@ -78,7 +72,7 @@
                         </p>
                     </div>
                     <div>
-                        <a href="{{ route('checkout') }}"
+                        <a href="{{ route('checkout', ['event' => $event]) }}"
                             class="inline-block px-10 py-5 bg-white text-indigo-600 rounded-2xl font-black text-xl hover:scale-105 transition-transform shadow-xl">
                             Pesan Sekarang
                         </a>

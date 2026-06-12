@@ -10,4 +10,19 @@ class Partner extends Model
         'name',
         'logo'
     ];
+
+    public function getLogoUrlAttribute()
+    {
+        $logo = $this->attributes['logo'] ?? null;
+        
+        if (! $logo) {
+            return '';
+        }
+
+        if (preg_match('/^https?:\/\//', $logo)) {
+            return $logo;
+        }
+
+        return asset('storage/' . $logo);
+    }
 }

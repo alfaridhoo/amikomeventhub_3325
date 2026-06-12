@@ -12,9 +12,12 @@ class TransactionController extends Controller
     {
         $search = $request->search;
 
-        $transactions = Transaction::when($search, function ($query) use ($search) {
-            $query->where('id', 'LIKE', "%$search%");
-        })->latest()->get();
+        $transactions = Transaction::with('event')
+            ->when($search, function ($query) use ($search) {
+                $query->where('id', 'LIKE', "%$search%");
+            })
+            ->latest()
+            ->get();
 
         return view('admin.transactions', compact('transactions'));
     }

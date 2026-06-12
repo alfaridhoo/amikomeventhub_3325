@@ -18,6 +18,7 @@ return new class extends Migration
     $table->string('customer_name');
     $table->string('customer_email');
     $table->string('customer_phone');
+    $table->integer('quantity')->default(1);
     $table->integer('total_price');
     $table->string('status')->default('Pending');
     $table->string('snap_token')->nullable();
