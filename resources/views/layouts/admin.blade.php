@@ -41,6 +41,12 @@
         class="flex items-center gap-3 px-4 py-3 {{ request()->routeIs('admin.partners.*') ? 'bg-indigo-800 text-white' : '' }} rounded-xl font-bold transition">
         Kelola Partner
     </a>
+
+    <!-- TRANSAKSI -->
+    <a href="{{ route('admin.transactions.index') }}"
+        class="flex items-center gap-3 px-4 py-3 {{ request()->routeIs('admin.transactions.*') ? 'bg-indigo-800 text-white' : '' }} rounded-xl font-bold transition">
+        Kelola Transaksi
+    </a>
 </nav>
 
         {{-- ✅ TAMBAHAN: Info User + Tombol Logout --}}
