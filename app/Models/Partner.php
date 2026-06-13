@@ -14,15 +14,19 @@ class Partner extends Model
     public function getLogoUrlAttribute()
     {
         $logo = $this->attributes['logo'] ?? null;
-        
+
         if (! $logo) {
             return '';
         }
 
-        if (preg_match('/^https?:\/\//', $logo)) {
+        if (preg_match('/^(https?:\/\/|data:image\/[a-zA-Z]+;base64,)/', $logo)) {
             return $logo;
         }
 
-        return asset('storage/' . $logo);
+        if (str_starts_with($logo, 'public/')) {
+            $logo = substr($logo, 7);
+        }
+
+        return asset('storage/' . ltrim($logo, '/'));
     }
 }
