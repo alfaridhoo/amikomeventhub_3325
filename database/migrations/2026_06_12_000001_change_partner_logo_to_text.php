@@ -12,7 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        DB::statement('ALTER TABLE partners MODIFY logo TEXT NOT NULL');
+        $driver = DB::getDriverName();
+
+        if ($driver === 'pgsql') {
+            DB::statement('ALTER TABLE partners ALTER COLUMN logo TYPE TEXT');
+            DB::statement('ALTER TABLE partners ALTER COLUMN logo SET NOT NULL');
+        } else {
+            DB::statement('ALTER TABLE partners MODIFY logo TEXT NOT NULL');
+        }
     }
 
     /**
@@ -20,6 +27,13 @@ return new class extends Migration
      */
     public function down(): void
     {
-        DB::statement('ALTER TABLE partners MODIFY logo VARCHAR(255) NOT NULL');
+        $driver = DB::getDriverName();
+
+        if ($driver === 'pgsql') {
+            DB::statement('ALTER TABLE partners ALTER COLUMN logo TYPE VARCHAR(255)');
+            DB::statement('ALTER TABLE partners ALTER COLUMN logo SET NOT NULL');
+        } else {
+            DB::statement('ALTER TABLE partners MODIFY logo VARCHAR(255) NOT NULL');
+        }
     }
 };
