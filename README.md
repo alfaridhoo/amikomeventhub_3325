@@ -9,3 +9,6 @@ https://amikomeventhub-3325-main-8d8zyf.free.laravel.cloud/kontak
 Tugas 8 saya commit tugas 5:
 https://amikomeventhub-3325-main-8d8zyf.free.laravel.cloud/admin
 
+Infinity : 
+http://amikomeventshub3325.gt.tc/
+http://amikomeventshub3325.gt.tc/admin
