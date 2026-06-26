@@ -6,20 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-   public function up(): void
-{
-    Schema::table('transactions', function (Blueprint $table) {
-        $table->string('snap_token')->nullable()->after('status');
-    });
-}
+    public function up(): void
+    {
+        Schema::table('transactions', function (Blueprint $table) {
+            if (!Schema::hasColumn('transactions', 'snap_token')) {
+                $table->string('snap_token')->nullable()->after('status');
+            }
+        });
+    }
 
-public function down(): void
-{
-    Schema::table('transactions', function (Blueprint $table) {
-        $table->dropColumn('snap_token');
-    });
-}
+    public function down(): void
+    {
+        Schema::table('transactions', function (Blueprint $table) {
+            if (Schema::hasColumn('transactions', 'snap_token')) {
+                $table->dropColumn('snap_token');
+            }
+        });
+    }
 };
