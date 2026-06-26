@@ -40,6 +40,9 @@ Route::get('/profil', function () { return view('profil'); });
 Route::get('/katalog', function () { return view('katalog'); });
 Route::get('/bantuan', function () { return view('bantuan'); });
 
+Route::get('/payment/{order_id}', [\App\Http\Controllers\CheckoutController::class, 'payment'])->name('checkout.payment');
+Route::get('/success/{order_id}', [\App\Http\Controllers\CheckoutController::class, 'success'])->name('checkout.success');
+
 
 
 // ==========================================
