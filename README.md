@@ -13,3 +13,6 @@ Infinity :
 http://amikomeventshub3325.gt.tc/
 
 http://amikomeventshub3325.gt.tc/admin
+
+Tugas Gemini P12 : 
+https://github.com/alfaridhoo/newamikomeventub3325.git
